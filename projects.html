@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Projects | Gweleni Construction Cape Town</title>
+<meta name="description" content="Browse completed Gweleni Construction projects across Bellville, Durbanville, Brackenfell, Parow, Tyger Valley and Century City. Search, filter and view on a map.">
+<meta name="keywords" content="construction projects Cape Town, completed building projects, kitchen renovation Bellville, roof replacement Parow, home extension Tyger Valley, retail fit-out Century City, new build Durbanville">
+<meta name="author" content="Gweleni Construction">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#101922">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://unpkg.com; style-src 'self' 'unsafe-inline' https://unpkg.com https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://images.unsplash.com https://tile.openstreetmap.org https://unpkg.com; connect-src 'self' https://formspree.io; form-action 'self' https://formspree.io; base-uri 'self'; object-src 'none'">
+<meta property="og:site_name" content="Gweleni Construction">
+<meta property="og:locale" content="en_ZA">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Our Projects | Gweleni Construction Cape Town">
+<meta property="og:description" content="Browse completed Gweleni Construction projects across Bellville, Durbanville, Brackenfell, Parow, Tyger Valley and Century City. Search, filter and view on a map.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23101922'/%3E%3Ctext x='50%25' y='58%25' font-family='Arial,sans-serif' font-weight='700' font-size='38' fill='%23F0A800' text-anchor='middle'%3EG%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Work+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+<link rel="stylesheet" href="css/style.css">
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin="" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<input type="checkbox" id="nav-toggle" class="nav-toggle-input" aria-label="Toggle navigation menu">
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="logo">
+      <span class="logo-mark" aria-hidden="true">G</span>
+      <span class="logo-text">GWELENI<span class="logo-sub">CONSTRUCTION</span></span>
+    </a>
+
+    <label for="nav-toggle" class="nav-toggle-btn" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </label>
+
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="projects.html" aria-current="page">Projects</a>
+      <a href="contact.html">Contact</a>
+      <a href="enquiry.html" class="btn btn-gold nav-cta">Request a Quote</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="page-head">
+    <div class="section-inner">
+      <p class="eyebrow eyebrow-light">Our Work</p>
+      <h1>Our Projects</h1>
+      <p class="section-lead">A selection of completed projects across Cape Town&rsquo;s northern suburbs. Search by
+        suburb or type of work, filter by category, sort the results, open a photo in the gallery
+        or see where each project is on the map.</p>
+    </div>
+  </section>
+
+  <!-- Dynamic content: js/projects.js rebuilds this grid from js/projects-data.js every time
+       the search / filter / sort controls change. The cards below are also written into the
+       HTML so search engines and visitors without JavaScript still see every project. -->
+  <section class="about" id="project-browser">
+    <div class="section-inner">
+      <form class="project-toolbar" id="project-controls" role="search" aria-label="Search and filter projects">
+        <div class="toolbar-search">
+          <label for="project-search">Search projects</label>
+          <input type="search" id="project-search" placeholder="e.g. kitchen, Parow, roof" autocomplete="off">
+        </div>
+        <div>
+          <label for="project-category">Category</label>
+          <select id="project-category"><option value="">All categories</option></select>
+        </div>
+        <div>
+          <label for="project-sort">Sort by</label>
+          <select id="project-sort">
+            <option value="newest">Newest first</option>
+            <option value="oldest">Oldest first</option>
+            <option value="name">Name (A&ndash;Z)</option>
+            <option value="suburb">Suburb (A&ndash;Z)</option>
+          </select>
+        </div>
+        <button type="button" class="btn btn-dark" id="project-reset">Reset</button>
+      </form>
+
+      <p class="project-count" id="project-count" role="status" aria-live="polite"></p>
+
+      <div class="project-grid" id="project-grid">
+        <article class="project-card">
+          <a class="project-thumb" href="images/new-home-build.webp" data-lightbox="projects" data-caption="Double-Storey New Build — Durbanville">
+            <img src="images/new-home-build.webp" alt="New double-storey home under construction in Durbanville, Cape Town" width="450" height="340" loading="lazy" decoding="async">
+            <span class="project-zoom">View larger</span>
+          </a>
+          <div class="project-body">
+            <p class="project-meta">New Builds &middot; 2024</p>
+            <h3>Double-Storey New Build</h3>
+            <p class="project-place">Durbanville, Cape Town</p>
+          </div>
+        </article>
+        <article class="project-card">
+          <a class="project-thumb" href="images/kitchen-renovation.webp" data-lightbox="projects" data-caption="Open-Plan Kitchen Renovation — Bellville">
+            <img src="images/kitchen-renovation.webp" alt="Renovated white kitchen with under-cabinet lighting in Bellville, Cape Town" width="450" height="340" loading="lazy" decoding="async">
+            <span class="project-zoom">View larger</span>
+          </a>
+          <div class="project-body">
+            <p class="project-meta">Renovations &middot; 2025</p>
+            <h3>Open-Plan Kitchen Renovation</h3>
+            <p class="project-place">Bellville, Cape Town</p>
+          </div>
+        </article>
+        <article class="project-card">
+          <a class="project-thumb" href="images/bathroom-renovation.webp" data-lightbox="projects" data-caption="Modern Bathroom Renovation — Brackenfell">
+            <img src="images/bathroom-renovation.webp" alt="Renovated bathroom with glass shower and wooden-framed mirror in Brackenfell, Cape Town" width="450" height="340" loading="lazy" decoding="async">
+            <span class="project-zoom">View larger</span>
+          </a>
+          <div class="project-body">
+            <p class="project-meta">Renovations &middot; 2025</p>
+            <h3>Modern Bathroom Renovation</h3>
+            <p class="project-place">Brackenfell, Cape Town</p>
+          </div>
+        </article>
+        <article class="project-card">
+          <a class="project-thumb" href="images/home-extension.webp" data-lightbox="projects" data-caption="Home Extension — Tyger Valley">
+            <img src="images/home-extension.webp" alt="Home extension under construction with roof trusses in Tyger Valley, Cape Town" width="450" height="340" loading="lazy" decoding="async">
+            <span class="project-zoom">View larger</span>
+          </a>
+          <div class="project-body">
+            <p class="project-meta">Extensions &middot; 2023</p>
+            <h3>Home Extension</h3>
+            <p class="project-place">Tyger Valley, Cape Town</p>
+          </div>
+        </article>
+        <article class="project-card">
+          <a class="project-thumb" href="images/roof-replacement.webp" data-lightbox="projects" data-caption="Residential Roof Replacement — Parow">
+            <img src="images/roof-replacement.webp" alt="Roofing team replacing shingles on a residential roof in Parow, Cape Town" width="450" height="340" loading="lazy" decoding="async">
+            <span class="project-zoom">View larger</span>
+          </a>
+          <div class="project-body">
+            <p class="project-meta">Roofing &middot; 2024</p>
+            <h3>Residential Roof Replacement</h3>
+            <p class="project-place">Parow, Cape Town</p>
+          </div>
+        </article>
+        <article class="project-card">
+          <a class="project-thumb" href="images/retail-fitout.webp" data-lightbox="projects" data-caption="Retail Store Fit-Out — Century City">
+            <img src="images/retail-fitout.webp" alt="Completed retail store interior fit-out in Century City, Cape Town" width="450" height="340" loading="lazy" decoding="async">
+            <span class="project-zoom">View larger</span>
+          </a>
+          <div class="project-body">
+            <p class="project-meta">Commercial &middot; 2023</p>
+            <h3>Retail Store Fit-Out</h3>
+            <p class="project-place">Century City, Cape Town</p>
+          </div>
+        </article>
+      </div>
+
+      <div class="project-empty" id="project-empty" hidden>
+        <p><strong>No projects match your search.</strong><br>Try a different word, or press Reset to see every project.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="map-section" id="project-map-section">
+    <div class="section-inner">
+      <p class="eyebrow">Where We Build</p>
+      <h2>Project locations</h2>
+      <p class="section-lead">Markers follow your search and filters. Use the &ldquo;Show on map&rdquo; link on a
+        project card to jump straight to it. Marker positions are approximate suburb centres.</p>
+      <div id="projects-map" class="map-box" role="region" aria-label="Map of Gweleni Construction project locations"></div>
+    </div>
+  </section>
+
+  <section class="cta-banner">
+    <div class="section-inner cta-inner">
+      <div>
+        <h2 class="text-light">Like what you see?</h2>
+        <p class="section-lead section-lead-light">Tell us about your project and get a free quote.</p>
+      </div>
+      <a href="enquiry.html" class="btn btn-gold">Get a Free Quote &rsaquo;</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="section-inner footer-inner">
+    <div class="footer-brand">
+      <span class="logo-mark" aria-hidden="true">G</span>
+      <div>
+        <p class="footer-name">Gweleni Construction</p>
+        <p class="footer-tag">Building &amp; renovation, Bellville &amp; Cape Town</p>
+      </div>
+    </div>
+
+    <nav class="footer-links" aria-label="Footer navigation">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="projects.html">Projects</a>
+      <a href="enquiry.html">Get a Quote</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+    <div class="footer-contact">
+      <a href="tel:+27699954854">+27 69 995 4854</a>
+      <a href="mailto:nokhayasingatha3@gmail.com">nokhayasingatha3@gmail.com</a>
+      <span>318 Ridgeworth, Bellville, Cape Town</span>
+    </div>
+  </div>
+  <p class="footer-stamp">DRAWING NO. GC&ndash;2026&ndash;01 &middot; &copy; 2026 Gweleni Construction</p>
+</footer>
+
+<script src="js/main.js" defer></script>
+<script src="js/projects-data.js" defer></script>
+<script src="js/projects.js" defer></script>
+
+</body>
+</html>

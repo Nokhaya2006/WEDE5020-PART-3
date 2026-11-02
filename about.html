@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us | Gweleni Construction, Bellville Builders</title>
+<meta name="description" content="Gweleni Construction is a Bellville-based building company established in 2006, serving Cape Town’s northern suburbs with hands-on, quality workmanship.">
+<meta name="keywords" content="about Gweleni Construction, Bellville building company, builders northern suburbs Cape Town, established 2006, residential builders, construction mission and vision">
+<meta name="author" content="Gweleni Construction">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#101922">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://unpkg.com; style-src 'self' 'unsafe-inline' https://unpkg.com https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://images.unsplash.com https://tile.openstreetmap.org https://unpkg.com; connect-src 'self' https://formspree.io; form-action 'self' https://formspree.io; base-uri 'self'; object-src 'none'">
+<meta property="og:site_name" content="Gweleni Construction">
+<meta property="og:locale" content="en_ZA">
+<meta property="og:type" content="website">
+<meta property="og:title" content="About Us | Gweleni Construction, Bellville Builders">
+<meta property="og:description" content="Gweleni Construction is a Bellville-based building company established in 2006, serving Cape Town’s northern suburbs with hands-on, quality workmanship.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23101922'/%3E%3Ctext x='50%25' y='58%25' font-family='Arial,sans-serif' font-weight='700' font-size='38' fill='%23F0A800' text-anchor='middle'%3EG%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Work+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<input type="checkbox" id="nav-toggle" class="nav-toggle-input" aria-label="Toggle navigation menu">
+
+<!-- Site header and main navigation: identical on every page -->
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="logo">
+      <span class="logo-mark" aria-hidden="true">G</span>
+      <span class="logo-text">GWELENI<span class="logo-sub">CONSTRUCTION</span></span>
+    </a>
+
+    <label for="nav-toggle" class="nav-toggle-btn" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </label>
+
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="about.html" aria-current="page">About</a>
+      <a href="services.html">Services</a>
+      <a href="projects.html">Projects</a>
+      <a href="contact.html">Contact</a>
+      <a href="enquiry.html" class="btn btn-gold nav-cta">Request a Quote</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- Full About Us content: company story, mission, vision, key stats.
+       Split into a wide copy column and a narrow stats sidebar (.about-grid
+       in the shared stylesheet) so the key numbers stay visible next to the
+       story instead of being buried below it. -->
+  <section class="about" id="about">
+    <div class="section-inner about-grid">
+      <div class="about-copy">
+        <p class="eyebrow">About Us</p>
+        <h1>Two decades of hands&#8209;on craftsmanship</h1>
+        <p>Gweleni Construction is a Bellville-based construction company established in 2006.
+          We specialise in residential building, renovations, extensions and roofing for
+          clients across Cape Town&rsquo;s northern suburbs &mdash; including Durbanville,
+          Brackenfell, Parow and Tyger Valley &mdash; from first-time homeowners to small
+          commercial operators.</p>
+        <p>We have built our reputation on strong client relationships and careful, hands-on
+          workmanship rather than volume &mdash; every project is managed from planning through
+          to handover by the same team, so nothing gets lost between site visits and quotes.</p>
+
+        <p>See our <a class="inline-link" href="projects.html">recent projects</a>, read about our
+          <a class="inline-link" href="services.html">services</a> or
+          <a class="inline-link" href="enquiry.html">request a free quote</a>.</p>
+
+        <!-- Vision and mission are kept as two short, separate cards rather
+             than one merged paragraph, since they answer different
+             questions (where the company is going vs. how it delivers day
+             to day) and are easier to scan side by side. -->
+        <div class="mission-vision">
+          <div class="mv-card">
+            <h2>Our Vision</h2>
+            <p>To be the northern suburbs&rsquo; most trusted construction partner, recognised
+              regionally for quality, reliability and professionalism.</p>
+          </div>
+          <div class="mv-card">
+            <h2>Our Mission</h2>
+            <p>To deliver high-quality construction projects on time and within budget, building
+              long-term client relationships through transparent communication and skilled
+              workmanship.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- <aside> is the correct element here since the stats support the
+           main story but aren't part of its reading order; aria-label gives
+           it an accessible name since it has no visible heading of its
+           own. -->
+      <aside class="about-stats" aria-label="Company statistics">
+        <div class="stat">
+          <span class="stat-num">20+</span>
+          <span class="stat-label">Years operating<br>in Cape Town</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">20+</span>
+          <span class="stat-label">Completed<br>projects</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">100%</span>
+          <span class="stat-label">Client-managed<br>from quote to handover</span>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+</main>
+
+<!-- Footer / title block: identical on every page -->
+<footer class="site-footer">
+  <div class="section-inner footer-inner">
+    <div class="footer-brand">
+      <span class="logo-mark" aria-hidden="true">G</span>
+      <div>
+        <p class="footer-name">Gweleni Construction</p>
+        <p class="footer-tag">Building &amp; renovation, Bellville &amp; Cape Town</p>
+      </div>
+    </div>
+
+    <nav class="footer-links" aria-label="Footer navigation">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="projects.html">Projects</a>
+      <a href="enquiry.html">Get a Quote</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+    <div class="footer-contact">
+      <a href="tel:+27699954854">+27 69 995 4854</a>
+      <a href="mailto:nokhayasingatha3@gmail.com">nokhayasingatha3@gmail.com</a>
+      <span>318 Ridgeworth, Bellville, Cape Town</span>
+    </div>
+  </div>
+  <p class="footer-stamp">DRAWING NO. GC&ndash;2026&ndash;01 &middot; &copy; 2026 Gweleni Construction</p>
+</footer>
+
+<script src="js/main.js" defer></script>
+
+</body>
+</html>

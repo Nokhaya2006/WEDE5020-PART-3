@@ -1,0 +1,11 @@
+# robots.txt for Gweleni Construction
+# Tells search engine crawlers which parts of the website they may visit.
+
+# These rules apply to all crawlers (Google, Bing, etc.)
+User-agent: *
+
+# Allow crawlers to visit every page on the site
+Allow: /
+
+# Location of the sitemap, which lists all pages on the website
+Sitemap: https://ri-wede5020-gr4-p1-p2-p3.github.io/ri-pta-wede5020-part1-part2-part3-nokhaya2006/sitemap.xml
